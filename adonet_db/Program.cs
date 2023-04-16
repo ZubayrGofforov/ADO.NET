@@ -29,8 +29,11 @@ class Program
 
         IUserRepository userRepository = new UserRepository();
         var users = await userRepository.GetAllAsync(0, 3);
-        while (true)
-            Console.WriteLine(users);
+     
+        foreach (var item in users)
+        {
+            Console.WriteLine(item.FullName + ' ' + item.Username + ' ' + item.Address);
+        }
 
     }
 }
